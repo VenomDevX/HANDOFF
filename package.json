@@ -57,7 +57,7 @@
     "eslint-config-next": "16.0.8",
     "firebase-tools": "^15.22.4",
     "supabase": "^2.108.0",
-    "tailwindcss": "4.1.11",
+    "tailwindcss": "4.3.2",
     "typescript": "5.9.3",
     "vitest": "^4.1.9"
   },
