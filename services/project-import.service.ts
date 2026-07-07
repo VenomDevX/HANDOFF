@@ -196,7 +196,7 @@ export async function confirmProjectImport(
 
   let created: { id: string; code: string; name: string }[] = [];
   if (validRows.length > 0) {
-    const { data: inserted, error: insertError } = await supabase
+    const { data: inserted, error: insertError } = await createAdminClient()
       .from('projects')
       .insert(validRows.map((row) => ({
         organization_id: orgId,
