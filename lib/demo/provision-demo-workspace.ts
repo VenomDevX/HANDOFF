@@ -68,7 +68,9 @@ export async function provisionDemoWorkspace(authUserId: string, requestedRole: 
         // Dummy demo personas are never logged into directly — only the
         // anonymous visitor logs in. Give them a random, discarded password so
         // they can't be signed into with a guessable/shared credential.
-        password: `${crypto.randomUUID()}${crypto.randomUUID()}`,
+        // "Aa1!" satisfies the auth policy (upper + symbol), which UUID hex alone never does;
+        // one UUID (122 random bits) keeps it under bcrypt's 72-char limit.
+        password: `${crypto.randomUUID()}Aa1!`,
         email_confirm: true,
         user_metadata: { full_name: persona.name },
       });

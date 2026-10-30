@@ -75,11 +75,11 @@ describe('RLS: student workspace isolation', () => {
 
   async function createStudentUser(email: string) {
     const { data } = await adminClient.auth.admin.createUser({
-      email, password: 'password123', email_confirm: true,
+      email, password: process.env.TEST_USER_PASSWORD!, email_confirm: true,
     });
     createdUserIds.push(data!.user!.id);
     const client = createClient(URL, KEY);
-    await client.auth.signInWithPassword({ email, password: 'password123' });
+    await client.auth.signInWithPassword({ email, password: process.env.TEST_USER_PASSWORD! });
     return { userId: data!.user!.id as string, client };
   }
 
