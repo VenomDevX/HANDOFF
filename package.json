@@ -43,7 +43,7 @@
     "motion": "^12.23.24",
     "next": "^15.5.20",
     "next-themes": "^0.4.6",
-    "nodemailer": "^9.0.3",
+    "nodemailer": "^10.3.1",
     "pdfkit": "^0.19.1",
     "postcss": "^8.5.10",
     "react": "^19.2.1",
@@ -60,14 +60,14 @@
     "@types/pdfkit": "^0.17.6",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@vitest/coverage-v8": "^4.1.9",
+    "@vitest/coverage-v8": "^4.1.12",
     "eslint": "9.39.1",
     "eslint-config-next": "16.0.8",
     "firebase-tools": "^15.22.4",
     "supabase": "^2.108.0",
     "tailwindcss": "4.1.11",
     "typescript": "5.9.3",
-    "vitest": "^4.1.9"
+    "vitest": "^4.1.12"
   },
   "overrides": {
     "postcss": "^8.5.10",
