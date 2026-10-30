@@ -12,7 +12,7 @@ describe('Student Workspace RPCs', () => {
 
   async function createUser(email: string) {
     const { data } = await adminClient.auth.admin.createUser({
-      email, password: 'password123', email_confirm: true,
+      email, password: process.env.TEST_USER_PASSWORD!, email_confirm: true,
     });
     createdUserIds.push(data!.user!.id);
     return data!.user!.id;
@@ -20,7 +20,7 @@ describe('Student Workspace RPCs', () => {
 
   async function signIn(email: string): Promise<SupabaseClient> {
     const client = createClient(URL, KEY);
-    const { error } = await client.auth.signInWithPassword({ email, password: 'password123' });
+    const { error } = await client.auth.signInWithPassword({ email, password: process.env.TEST_USER_PASSWORD! });
     if (error) throw new Error(`sign-in failed for ${email}: ${error.message}`);
     return client;
   }
